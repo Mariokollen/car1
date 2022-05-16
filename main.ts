@@ -21,9 +21,9 @@ radio.onReceivedString(function (receivedString) {
         }
         bitbot.go(BBDirection.Reverse, 35)
     } else if (receivedString == "Høyre") {
-        bitbot.rotate(BBRobotDirection.Right, 20)
+        bitbot.rotatems(BBRobotDirection.Right, 35, 400)
     } else if (receivedString == "Venstre") {
-        bitbot.rotate(BBRobotDirection.Left, 20)
+        bitbot.rotatems(BBRobotDirection.Left, 35, 400)
     } else {
         bitbot.stop(BBStopMode.Brake)
     }
