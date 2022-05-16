@@ -1,11 +1,14 @@
 input.onButtonPressed(Button.A, function () {
     radio.sendString("A")
+    basic.showString("A")
 })
 input.onGesture(Gesture.TiltRight, function () {
     radio.sendString("Høyre")
 })
 input.onButtonPressed(Button.AB, function () {
     radio.sendString("A+B")
+    basic.showString("AB")
+    bitbot.BBBias(BBRobotDirection.Left, 10)
 })
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "A") {
@@ -18,15 +21,16 @@ radio.onReceivedString(function (receivedString) {
         }
         bitbot.go(BBDirection.Reverse, 35)
     } else if (receivedString == "Høyre") {
-        bitbot.rotate(BBRobotDirection.Right, 60)
+        bitbot.rotate(BBRobotDirection.Right, 20)
     } else if (receivedString == "Venstre") {
-        bitbot.rotate(BBRobotDirection.Left, 60)
+        bitbot.rotate(BBRobotDirection.Left, 20)
     } else {
         bitbot.stop(BBStopMode.Brake)
     }
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendString("B")
+    basic.showString("B")
 })
 input.onGesture(Gesture.TiltLeft, function () {
     radio.sendString("Venstre")
